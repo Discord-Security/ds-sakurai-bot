@@ -5,6 +5,7 @@ module.exports = (client) => {
   require('./eventLoader')(client);
 
   client.commands = new Collection();
+  client.commandsGuild = new Collection();
 
   /* Logging the bot in. */
   client

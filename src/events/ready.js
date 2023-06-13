@@ -9,11 +9,21 @@ module.exports = async (client) => {
 		file.endsWith(".js")
 	);
 	const commands = [];
+	const commandGuildFiles = readdirSync("./src/commands/guildOnly/").filter(
+		(file) => file.endsWith(".js")
+	);
+	const commandsGuild = [];
 
 	for (const file of commandFiles) {
 		const command = require(`../commands/${file}`);
 		commands.push(command.data.toJSON());
 		client.commands.set(command.data.name, command);
+	}
+
+	for (const file of commandGuildFiles) {
+		const commandGuild = require(`../commands/guildOnly/${file}`);
+		commandsGuild.push(commandGuild.data.toJSON());
+		client.commandsGuild.set(commandGuild.data.name, commandGuild);
 	}
 
 	const rest = new REST({
@@ -22,41 +32,35 @@ module.exports = async (client) => {
 
 	(async () => {
 		try {
-			if (process.env.STATUS === "PRODUCTION") {
-				// If the bot is in production mode it will load slash commands for all guilds
-				await rest.put(Routes.applicationCommands(client.user.id), {
+			await rest.put(Routes.applicationCommands(client.user.id), {
+				body: commands,
+			});
+			console.log(
+				`${ChalkAdvanced.gray(">")} ${ChalkAdvanced.green(
+					"Sucesso registrado comandos globalmente"
+				)}`
+			);
+			await rest.put(
+				Routes.applicationGuildCommands(
+					client.user.id,
+					"1106771396757037076"
+				),
+				{
 					body: commands,
-				});
-				console.log(
-					`${ChalkAdvanced.gray(">")} ${ChalkAdvanced.green(
-						"Sucesso registrado comandos globalmente"
-					)}`
-				);
-			} else {
-				await rest.put(
-					Routes.applicationGuildCommands(
-						client.user.id,
-						process.env.GUILD_ID
-					),
-					{
-						body: commands,
-					}
-				);
+				}
+			);
 
-				console.log(
-					`${ChalkAdvanced.gray(">")} ${ChalkAdvanced.green(
-						"Sucesso registrado comandos localmente"
-					)}`
-				);
-			}
+			console.log(
+				`${ChalkAdvanced.gray(">")} ${ChalkAdvanced.green(
+					"Sucesso registrado comandos localmente"
+				)}`
+			);
 		} catch (err) {
 			if (err) console.error(err);
 		}
 	})();
 	client.user.setPresence({
-		activities: [
-			{ name: `Sakuraizando!`, type: 0 },
-		],
+		activities: [{ name: `Sakuraizando!`, type: 0 }],
 		status: "dnd",
 	});
 };

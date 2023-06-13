@@ -26,9 +26,9 @@ const guildSchema = new Schema({
 			_id: String,
 			function: String,
 		},
-  ],
-  invite: String,
-  approved: Boolean,
+	],
+	invite: String,
+	approved: Boolean,
 });
 
 const reportSchema = new Schema({
