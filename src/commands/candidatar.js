@@ -87,7 +87,7 @@ module.exports = {
 				const funcao = i.fields.getTextInputValue("FunçãoInput");
 				const member = interaction.member;
 				const approve = new discord.ButtonBuilder()
-					.setCustomId(`Registrar ${member.id} ${id}`)
+					.setCustomId(`Registrar ${member.id} ${id} ${funcao}`)
 					.setLabel("Registrar")
 					.setStyle(2)
 					.setEmoji("1026116735759302727");
@@ -143,9 +143,7 @@ module.exports = {
 
 			const MotivoInput = new discord.TextInputBuilder()
 				.setCustomId("MotivoInput")
-				.setLabel(
-					"Porque você gostaria de entrar na Sakurai?"
-				)
+				.setLabel("Porque você gostaria de entrar na Sakurai?")
 				.setStyle(discord.TextInputStyle.Paragraph)
 				.setMaxLength(512)
 				.setRequired(true);

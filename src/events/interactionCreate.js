@@ -7,6 +7,8 @@ module.exports = (client, interaction) => {
 			return require("../buttons/approve")(client, interaction);
 		if (interaction.customId.startsWith("reject"))
 			return require("../buttons/reject")(client, interaction);
+		if (interaction.customId.startsWith("Registrar"))
+			return require("../buttons/registrar")(client, interaction);
 		if (interaction.customId.endsWith("confirm")) return;
 		require("../buttons/" + interaction.customId)(client, interaction);
 	}
