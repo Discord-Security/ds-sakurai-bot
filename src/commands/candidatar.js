@@ -123,7 +123,7 @@ module.exports = {
 				_id: interaction.guild.id,
 			});
 
-			if (guild.approved === true)
+			if (guild && guild.approved === true)
 				return interaction.reply({
 					content: "Este servidor já foi aprovado dentro da rede.",
 					ephemeral: true,
@@ -135,7 +135,7 @@ module.exports = {
 
 			const TOSInput = new discord.TextInputBuilder()
 				.setCustomId("TOSInput")
-				.setLabel("Você e seus membros staff seguem a TOS do Discord?")
+				.setLabel("Você e seus membros staff seguem a TOS?")
 				.setStyle(discord.TextInputStyle.Short)
 				.setMinLength(3)
 				.setMaxLength(3)
@@ -144,7 +144,7 @@ module.exports = {
 			const MotivoInput = new discord.TextInputBuilder()
 				.setCustomId("MotivoInput")
 				.setLabel(
-					"Porque você gostaria de entrar na 桜井 Central Sakurai?"
+					"Porque você gostaria de entrar na Sakurai?"
 				)
 				.setStyle(discord.TextInputStyle.Paragraph)
 				.setMaxLength(512)

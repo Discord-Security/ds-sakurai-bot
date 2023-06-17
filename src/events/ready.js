@@ -46,7 +46,7 @@ module.exports = async (client) => {
 					"1106771396757037076"
 				),
 				{
-					body: commands,
+					body: commandsGuild,
 				}
 			);
 
