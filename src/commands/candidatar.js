@@ -176,15 +176,15 @@ module.exports = {
 				});
 				const motivo = i.fields.getTextInputValue("MotivoInput");
 				const tos = i.fields.getTextInputValue("TOSInput");
-				const guild = interaction.guild;
+				const server = interaction.guild;
 				const member = interaction.member;
 				const row = new discord.ActionRowBuilder().setComponents(
 					new discord.ButtonBuilder()
-						.setCustomId("approve-" + guild.id)
+						.setCustomId("approve-" + server.id)
 						.setLabel("Aprovar")
 						.setStyle(2),
 					new discord.ButtonBuilder()
-						.setCustomId("reject-" + guild.id)
+						.setCustomId("reject-" + server.id)
 						.setLabel("Rejeitar")
 						.setStyle(2)
 				);
@@ -203,7 +203,7 @@ module.exports = {
 								},
 								{
 									name: "<:Cs_10:1108104342109696000> Server id",
-									value: `**${guild.id}**`,
+									value: `**${server.id}**`,
 									inline: true,
 								},
 								{
