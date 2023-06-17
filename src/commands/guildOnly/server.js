@@ -138,30 +138,28 @@ module.exports = {
 					} else return 0;
 				});
 				const emb = new discord.EmbedBuilder()
-					.setTitle(
-						"***桜井 Central Sakurai***"
-					)
+					.setTitle("***桜井 Central Sakurai***")
 					.setDescription(
 						"> <:Cs_10:1108104342109696000>**_Boas-vindas, somos a 桜井  Central Sakurai, temos como objetivo tornar a nossa comunidade animes & games um lugar melhor para todos, visando o Respeito entre todos,a 桜井 C.S é um ótimo lugar pra aprender a administrar vosso servidor, temos donos e staff competentes e experientes dispostos a ajudar com o seu servidor. _**\n> <:CS_7:1107973357531570216>**_Caso queira ingressar preencha o [Formulário](https://forms.gle/qYz39M1ZUhr8VzXT6) _**"
 					)
 					.addFields(
-						{
+						/* {
 							name: "<:Cs_10:1108104342109696000>  | Hanabi",
 							value: hanabi.join("\n"),
-						},
+						}, */
 						{
 							name: "<:Cs_10:1108104342109696000> | Hana",
 							value: hana.join("\n"),
 						},
-						{
+						/* {
 							name: "<:Cs_10:1108104342109696000> | Sakura",
 							value: sakura.join("\n"),
-						},
+						}, */
 						{
 							name: "<:Cs_10:1108104342109696000> | Kareru",
 							value: kareru.join("\n"),
-						},
-						{
+						}
+						/* {
 							name: "<:Cs_10:1108104342109696000> | Hatsuga",
 							value: hatsuga.join("\n"),
 						},
@@ -176,7 +174,7 @@ module.exports = {
 						{
 							name: "<:Cs_10:1108104342109696000> | Saku",
 							value: saku.join("\n"),
-						}
+						} */
 					)
 					.setColor("#e2adad")
 					.setImage("https://imgur.com/5ahR9Yp.gif")
