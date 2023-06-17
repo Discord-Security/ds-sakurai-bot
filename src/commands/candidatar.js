@@ -193,7 +193,7 @@ module.exports = {
 					content: "@everyone",
 					embeds: [
 						{
-							title: "<:central_sakurai:1107736400050278420> Candidatura 桜井 Central Sakurai",
+							title: "Candidatura 桜井 Central Sakurai",
 							color: 14643613,
 							fields: [
 								{
