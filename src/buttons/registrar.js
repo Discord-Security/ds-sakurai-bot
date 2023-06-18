@@ -5,10 +5,7 @@ module.exports = async (client, interaction) => {
 
 	const guildDoc = await client.db.Guilds.findOne({ _id: argumentos[2] });
 	if (guildDoc) {
-		guildDoc.staffsmember.roles.add({
-			_id: argumentos[1],
-			function: argumentos[3],
-		});
+		guildDoc.staffs.push({ _id: argumentos[1], function: argumentos[3] });
 		const guildMember = interaction.guild.members.cache.get(argumentos[1]);
 		guildMember.roles.add("1106772028280815707");
 		const guildCache = client.guilds.cache.get(argumentos[2]);
