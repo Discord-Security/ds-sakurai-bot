@@ -3,10 +3,10 @@ module.exports = async (client, interaction) => {
 	interaction.reply({
 		content: `Prontinho, Servidor ${id} aprovado com sucesso!`,
 	});
-	const guild = await client.db.Guilds.findOne({ _id: id });
-	if (guild) {
-		guild.approved = true;
-		guild.save();
+	const guildDoc = await client.db.Guilds.findOne({ _id: id });
+	if (guildDoc) {
+		guildDoc.approved = true;
+		guildDoc.save();
 	} else {
 		new client.db.Guilds({ _id: id, approved: true }).save();
 	}
