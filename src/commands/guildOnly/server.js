@@ -23,6 +23,22 @@ module.exports = {
 		)
 		.addSubcommand((subcommand) =>
 			subcommand
+				.setName("retirar")
+				.setDescription("Retirar um servidor.")
+				.addStringOption((option) =>
+					option
+						.setName("server")
+						.setNameLocalizations({
+							"en-US": "server",
+							"pt-BR": "servidor",
+						})
+						.setDescription("ID de um servidor")
+						.setAutocomplete(true)
+						.setRequired(true)
+				)
+		)
+		.addSubcommand((subcommand) =>
+			subcommand
 				.setName("change_invite")
 				.setNameLocalizations({
 					"pt-BR": "editar_invite",
@@ -102,6 +118,13 @@ module.exports = {
 							"Não foi possível encontrar um servidor no meu banco de dados... estranho!",
 					});
 				}
+				break;
+			}
+			case "retirar": {
+				const guild = client.guilds.cache.get(server);
+				if (guild) guild.leave();
+				await client.db.Guilds.deleteOne({ _id: server });
+				interaction.reply({ content: "Sucesso." });
 				break;
 			}
 			case "embed": {
