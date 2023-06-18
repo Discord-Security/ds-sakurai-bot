@@ -180,20 +180,20 @@ module.exports = {
 						{
 							name: "<:Cs_10:1108104342109696000> | Kareru",
 							value: kareru.join("\n"),
-						}
-						/* {
+						},
+						{
 							name: "<:Cs_10:1108104342109696000> | Hatsuga",
 							value: hatsuga.join("\n"),
 						},
-						{
+						/* {
 							name: "<:Cs_10:1108104342109696000> | Koeda",
 							value: koeda.join("\n"),
-						},
+						}, */
 						{
 							name: "<:Cs_10:1108104342109696000> | Tsubomi",
 							value: tsubomi.join("\n"),
-						},
-						{
+						}
+						/* {
 							name: "<:Cs_10:1108104342109696000> | Saku",
 							value: saku.join("\n"),
 						} */
