@@ -7,5 +7,5 @@ module.exports = async (client, guild) => {
 		.setThumbnail(guild.iconURL({ dynamic: true }))
 		.setColor(client.cor);
 
-	client.channels.cache.get("1107376183412269056").send({ embeds: [embed] });
+	client.channels.cache.get("1107038097012687028").send({ embeds: [embed] });
 };
