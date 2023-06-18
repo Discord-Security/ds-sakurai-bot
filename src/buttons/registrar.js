@@ -7,7 +7,7 @@ module.exports = async (client, interaction) => {
 	if (guildDoc) {
 		guildDoc.staffs.push({ _id: argumentos[1], function: argumentos[3] });
 		const guildMember = interaction.guild.members.cache.get(argumentos[1]);
-		guildMember.roles.add("1106772028280815707");
+		guildMember.roles.add("1106772024472379523");
 		const guildCache = client.guilds.cache.get(argumentos[2]);
 		if (!guildCache)
 			return interaction.channel.send({
