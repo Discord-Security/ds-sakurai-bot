@@ -95,7 +95,14 @@ module.exports = {
 					const emb = new discord.EmbedBuilder()
 						.setTitle("Info do servidor " + server)
 						.setDescription(
-							`Invite: ${doc.invite}\nAprovado: ${doc.approved}\nCargo: <@&${doc.roleId}>\nRepresentante: ${doc.representative}`
+							`Invite: ${doc.invite}\nAprovado: ${doc.approved
+								.toString()
+								.replace("true", "Sim")
+								.replace("false", "Não")}\nCargo: <@&${
+								doc.roleId
+							}>\nRepresentante: <@${doc.representative}> ${
+								doc.representative
+							}`
 						)
 						.setColor(client.cor);
 					interaction.reply({ embeds: [emb] });
