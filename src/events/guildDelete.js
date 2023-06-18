@@ -7,5 +7,5 @@ module.exports = async (client, guild) => {
 		.setThumbnail(guild.iconURL({ dynamic: true }))
 		.setColor(client.cor);
 
-	client.channels.cache.get("1120077184346902589").send({ embeds: [embed] });
+	client.channels.cache.get(client.canais.logs).send({ embeds: [embed] });
 };

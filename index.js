@@ -17,8 +17,8 @@ const client = new discord.Client({
 client.cor = "#FB4570";
 client.db = require("./database");
 client.canais = {
-	logs: "1025780160437432330",
-	errors: "1106772116981952532",
+	logs: "1120077184346902589",
+	errors: "1120081583324545084",
 };
 client.msg = {
   embeds: {
