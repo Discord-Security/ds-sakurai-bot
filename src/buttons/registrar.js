@@ -61,6 +61,9 @@ module.exports = async (client, interaction) => {
 						? guildCache.name
 						: "Sakurai não detectou?",
 					reason: "Novo cargo para registro do utilizador",
+					position:
+						interaction.guild.roles.cache.get("1120081333625032734")
+							.position + 1,
 				})
 				.then((role) => {
 					guildMember.roles.add(role);
