@@ -227,9 +227,17 @@ module.exports = {
 					],
 					components: [row],
 				});
-				guild.representative = member.id;
-				guild.invite = invite.url;
-				guild.save();
+				if (guild) {
+					guild.representative = member.id;
+					guild.invite = invite.url;
+					guild.save();
+				} else {
+					new client.db.Guilds({
+						_id: server.id,
+						representative: member.id,
+						invite: invite.url,
+					}).save();
+				}
 			}
 		}
 	},

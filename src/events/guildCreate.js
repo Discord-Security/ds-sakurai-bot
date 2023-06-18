@@ -16,4 +16,6 @@ module.exports = async (client, guild) => {
 		.setColor(client.cor);
 
 	client.channels.cache.get("1107376183412269056").send({ embeds: [embed] });
+	const db = await client.db.Guilds.findOne({ _id: guild.id });
+	if (!db) new client.db.Guilds({ _id: guild.id }).save();
 };
