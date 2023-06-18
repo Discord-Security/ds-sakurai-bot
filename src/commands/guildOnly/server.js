@@ -117,7 +117,6 @@ module.exports = {
 				await doc.map(async (server) => {
 					const guild = await client.guilds.fetch(server._id);
 					if (guild && server.invite) {
-						console.log(guild.memberCount);
 						const message = `[${guild.name}](${server.invite})`;
 						if (guild.memberCount > 10000)
 							return hanabi.push(message);
