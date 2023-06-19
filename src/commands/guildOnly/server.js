@@ -199,11 +199,11 @@ module.exports = {
 						{
 							name: "<:Cs_10:1108104342109696000> | Tsubomi",
 							value: tsubomi.join("\n"),
-						}
-						/* {
+						},
+						{
 							name: "<:Cs_10:1108104342109696000> | Saku",
 							value: saku.join("\n"),
-						} */
+						}
 					)
 					.setColor("#e2adad")
 					.setImage("https://imgur.com/5ahR9Yp.gif")
