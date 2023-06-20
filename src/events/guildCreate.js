@@ -13,7 +13,7 @@ module.exports = async (client, guild) => {
 			{ name: "🆔", value: guild.id.toString(), inline: true },
 		])
 		.setThumbnail(guild.iconURL({ dynamic: true }))
-		.setColor(client.cor);
+		.setColor("Green");
 
 	client.channels.cache.get(client.canais.logs).send({ embeds: [embed] });
 	const db = await client.db.Guilds.findOne({ _id: guild.id });

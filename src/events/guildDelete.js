@@ -5,7 +5,7 @@ module.exports = async (client, guild) => {
 		.setTitle(guild.name)
 		.addFields([{ name: "🆔", value: guild.id.toString(), inline: true }])
 		.setThumbnail(guild.iconURL({ dynamic: true }))
-		.setColor(client.cor);
+		.setColor("Red");
 
 	client.channels.cache.get(client.canais.logs).send({ embeds: [embed] });
 };
