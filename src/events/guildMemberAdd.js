@@ -18,7 +18,7 @@ module.exports = async (client, member) => {
 			.end((err, callback) => {
 				if (err) return 0;
 				const callbackRes =
-					callback._body.generated_text.match(/"([^"]*)"/g)[0];
+					callback._body.generated_text;
 				if (callbackRes.length > 0)
 					client.channels.cache.get("1106772099529453568").send({
 						content: callbackRes
