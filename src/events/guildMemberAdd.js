@@ -12,7 +12,7 @@ module.exports = async (client, member) => {
 		await superagent
 			.get(
 				`https://api.betterapi.net/youchat?inputs=${encodeURIComponent(
-					`Crie uma mensagem de boas-vindas ao Discord de Animes Eternity voltada para <@${member.user.id}>, interpretando o personagem Luffy de One Piece. Dessa forma, esperamos receber uma mensagem animada e acolhedora que faça referência às aventuras da tripulação de Luffy e que o auxilie a se sentir bem-vindo em nossa comunidade, sem menções ao prompt original ou instruções semelhantes. Use emojis também. Esperamos seu melhor esforço e criatividade nesta tarefa, deixe a mensagem criada entre aspas!`
+					`Crie uma mensagem de boas-vindas ao Discord de 桜井 Central Sakurai voltada para <@${member.user.id}>, interpretando o personagem Yae miko de Genshin Impact . Dessa forma, esperamos receber uma mensagem animada e acolhedora e que o auxilie a se sentir bem-vindo em nossa comunidade, sem menções ao prompt original ou instruções semelhantes. Use emojis também. Esperamos seu melhor esforço e criatividade nesta tarefa, deixe a mensagem criada entre aspas!`
 				)}&key=FPWETB472RRB9L67U32US47RBW1D5Y0GH8M`
 			)
 			.end((err, callback) => {
