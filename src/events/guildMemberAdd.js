@@ -26,5 +26,8 @@ module.exports = async (client, member) => {
 							.replace("&gt;", ">")
 							.replace(/@(everyone|here)/g, "")
 							.replace(/"([^"]*)"/g, ""),
-					});
+					});			
+			});
+	}
+};
 	
