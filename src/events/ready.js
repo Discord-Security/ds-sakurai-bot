@@ -60,7 +60,7 @@ module.exports = async (client) => {
 		}
 	})();
 	client.user.setPresence({
-		activities: [{ name: `Sakuraizando!`, type: 0 }],
+		activities: [{ name: `Recrutando servidores para a aliança  桜井 Sakurai!`, type: 0 }],
 		status: "dnd",
 	});
 };
