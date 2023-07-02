@@ -43,7 +43,7 @@ module.exports = async (client, interaction) => {
 			guildMember.roles.add("1120015320694927360");
 		else if (guildCache.memberCount > 500 && guildCache.memberCount <= 1000)
 			guildMember.roles.add("1120015323790331945");
-		else if (guildCache.memberCount > 100 && guildCache.memberCount <= 500)
+		else if (guildCache.memberCount > 10 && guildCache.memberCount <= 500)
 			guildMember.roles.add("1120015324528521277");
 		else
 			interaction.channel.send({
