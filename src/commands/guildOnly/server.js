@@ -161,7 +161,7 @@ module.exports = {
 							return koeda.push(message);
 						if (guild.memberCount > 500)
 							return tsubomi.push(message);
-						if (guild.memberCount > 100 && guild.memberCount <= 500)
+						if (guild.memberCount <= 500)
 							return saku.push(message);
 						else return 0;
 					} else return 0;
