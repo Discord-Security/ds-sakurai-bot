@@ -169,7 +169,7 @@ module.exports = {
 				const emb = new discord.EmbedBuilder()
 					.setTitle("***桜井 Central Sakurai***")
 					.setDescription(
-						"> <:Cs_10:1108104342109696000>**_Boas-vindas, somos a 桜井  Central Sakurai, temos como objetivo tornar a nossa comunidade animes & games um lugar melhor para todos, visando o Respeito entre todos,a 桜井 C.S é um ótimo lugar pra aprender a administrar vosso servidor, temos donos e staff competentes e experientes dispostos a ajudar com o seu servidor. _**\n> <:CS_7:1107973357531570216>**_Caso queira ingressar preencha o [Formulário](https://forms.gle/qYz39M1ZUhr8VzXT6) _**"
+						"> <:Cs_10:1108104342109696000>**_Boas-vindas, somos a 桜井  Central Sakurai, temos como objetivo tornar a nossa comunidade animes & games um lugar melhor para todos, visando o Respeito entre todos,a 桜井 C.S é um ótimo lugar pra aprender a administrar vosso servidor, temos donos e staff competentes e experientes dispostos a ajudar com o seu servidor. _**\n> <:CS_7:1107973357531570216>**_Caso queira ingressar basta entra no nosso [Servidor](https://discord.gg/2p3Rb3YkgN)  _**"
 					)
 					.addFields(
 						/* {
