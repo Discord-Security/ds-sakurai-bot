@@ -185,7 +185,7 @@ module.exports = {
 				Object.entries(constellations).forEach(
 					([constellation, servers]) => {
 						if (servers.length > 0) {
-							const chunks = chunkArray(servers, 10);
+							const chunks = chunkArray(servers, 999);
 							chunks.forEach((chunk, index) => {
 								const name =
 									index === 0
