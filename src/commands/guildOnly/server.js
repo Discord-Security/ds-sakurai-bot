@@ -74,8 +74,8 @@ module.exports = {
 			await interaction.respond(
 				guild
 					.filter(sv => sv._id.includes(focusedValue.value))
-					.map(choice => ({
-						name: choice._id,
+					.map(async choice => ({
+						name: await client.guilds.fetch(choice._id).name,
 						value: choice._id,
 					})),
 			);
