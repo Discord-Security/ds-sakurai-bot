@@ -64,6 +64,32 @@ module.exports = {
 				),
 		)
 		.addSubcommand(subcommand =>
+			subcommand
+				.setName('change_rep')
+				.setNameLocalizations({
+					'pt-BR': 'editar_representante',
+					'en-US': 'change_rep',
+				})
+				.setDescription('Altere o representante do servidor')
+				.addStringOption(option =>
+					option
+						.setName('server')
+						.setNameLocalizations({
+							'en-US': 'server',
+							'pt-BR': 'servidor',
+						})
+						.setDescription('ID de um servidor')
+						.setAutocomplete(true)
+						.setRequired(true),
+				)
+				.addMemberOption(option =>
+					option
+						.setName('representante')
+						.setDescription('Defina um representante novo')
+						.setRequired(true),
+				),
+		)
+		.addSubcommand(subcommand =>
 			subcommand.setName('embed').setDescription('Coloque a embed'),
 		),
 	async autocomplete(interaction, client) {
@@ -127,7 +153,22 @@ module.exports = {
 				} else {
 					interaction.reply({
 						content:
-							'Não foi possível encontrar um servidor no meu banco de dados... estranho!',
+							'Não foi possível encontrar o servidor no meu banco de dados... estranho!',
+					});
+				}
+				break;
+			}
+			case 'change_rep': {
+				const doc = await client.db.Guilds.findOne({ _id: server });
+				if (doc) {
+					doc.representative =
+						interaction.options.getString('representante');
+					doc.save();
+					interaction.reply({ content: 'Sucesso!' });
+				} else {
+					interaction.reply({
+						content:
+							'Não foi possível encontrar o servidor no meu banco de dados... estranho!',
 					});
 				}
 				break;
