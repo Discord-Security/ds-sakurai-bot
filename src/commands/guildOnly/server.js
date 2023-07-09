@@ -71,14 +71,19 @@ module.exports = {
 		const guild = await client.db.Guilds.find({});
 
 		if (guild) {
-			await interaction.respond(
+			const choices = await Promise.all(
 				guild
 					.filter(sv => sv._id.includes(focusedValue.value))
 					.map(async choice => ({
-						name: await client.guilds.fetch(choice._id).name,
+						name: await client.guilds
+							.fetch(choice._id)
+							.then(guild => guild.name)
+							.catch(() => choice._id),
 						value: choice._id,
 					})),
 			);
+
+			await interaction.respond(choices);
 		} else {
 			await interaction.respond({
 				name: 'Não há nada listado.',
