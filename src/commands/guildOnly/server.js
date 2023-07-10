@@ -82,7 +82,7 @@ module.exports = {
 						.setAutocomplete(true)
 						.setRequired(true),
 				)
-				.addMemberOption(option =>
+				.addUserOption(option =>
 					option
 						.setName('representante')
 						.setDescription('Defina um representante novo')
