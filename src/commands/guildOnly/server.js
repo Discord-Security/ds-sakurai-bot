@@ -239,6 +239,12 @@ module.exports = {
 						} else if (guild.memberCount <= 500) {
 							constellations.saku.push(message);
 						}
+					} else {
+						client.channels.cache
+							.get('1120077184346902589')
+							.send({
+								content: `Servidor ${server._id} não foi detectado, logo não entrou na embed.`,
+							});
 					}
 				});
 
