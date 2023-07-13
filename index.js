@@ -20,6 +20,7 @@ client.canais = {
 	logs: "1120077184346902589",
 	errors: "1120081583324545084",
 };
+client.central = '1106771396757037076';
 client.msg = {
   embeds: {
     nopermmod: new discord.EmbedBuilder()

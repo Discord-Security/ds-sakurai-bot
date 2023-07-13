@@ -175,6 +175,31 @@ module.exports = {
 			}
 			case 'retirar': {
 				const guild = client.guilds.cache.get(server);
+				const doc = await client.db.Guilds.findOne({ _id: server });
+				const central = client.guilds.cache.get(client.central);
+				if (doc) {
+					if (doc.roleId && central.roles.cache.get(doc.roleId))
+						await central.roles.cache.get(doc.roleId).delete();
+					if (doc.representative) {
+						const checkUser = async userId =>
+							(
+								await client.db.Guilds.find({
+									$or: [
+										{ representative: userId },
+										{ 'staffs._id': userId },
+									],
+								}).exec()
+							).length === 1;
+
+						if (await checkUser(doc.representative))
+							await central.members.kick(doc.representative);
+
+						for (const { _id } of doc.staffs) {
+							if (await checkUser(_id))
+								await central.members.kick(_id);
+						}
+					}
+				}
 				if (guild) guild.leave();
 				await client.db.Guilds.deleteOne({ _id: server });
 				interaction.reply({ content: 'Sucesso.' });
