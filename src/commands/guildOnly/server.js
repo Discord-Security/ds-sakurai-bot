@@ -103,7 +103,7 @@ module.exports = {
 					.map(async choice => ({
 						name: await client.guilds
 							.fetch(choice._id)
-							.then(guild => guild.name)
+							.then(guild => guild.name.split(0, 25))
 							.catch(() => choice._id),
 						value: choice._id,
 					})),
